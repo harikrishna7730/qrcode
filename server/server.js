@@ -160,7 +160,7 @@ app.get("/scan", (req, res) => {
       font-size:clamp(1.4rem,6vw,2rem);
       margin:0;
     ">
-      Hurry you got a ice gola🎉
+      Sorry – this device has already scanned.
     </h1>
   </div>  `)
   }
