@@ -142,9 +142,6 @@ app.get("/scan", (req, res) => {
 
   if (rows.some((r) => r.ip === ip)) {
     return res.send(
-    //   `<h1 style="font-family:sans-serif;color:#d33">
-    //   Sorry – this device has already scanned.
-    // </h1>`);
     `<div style="
     display:flex;
     flex-direction:column;
@@ -156,7 +153,7 @@ app.get("/scan", (req, res) => {
   ">
     <h1 style="
       font-family:sans-serif;
-      color:#32a852;
+      color:red;
       font-size:clamp(1.4rem,6vw,2rem);
       margin:0;
     ">
@@ -166,13 +163,26 @@ app.get("/scan", (req, res) => {
   }
 
   appendRow({ ip, ua, time: new Date().toISOString() });
-  res.send(`<h1 style="font-family:sans-serif;color:#32a852
-     display:flex;
-    flex-direction:column;   justify-content:center;
-    align-items:center;     min-height:100vh;
-   text-align:center;
+  res.send(
+   `<div style="
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    text-align:center;
     padding:0 1rem;
-    ">Hurry you got a ice gola🎉</h1>`);
+  ">
+    <h1 style="
+      font-family:sans-serif;
+      color:green;
+      font-size:clamp(1.4rem,6vw,2rem);
+      margin:0;
+    ">
+     Hurry you got a ice gola🎉
+    </h1>
+  </div>  `
+  );
 });
 
 // quick JSON view
