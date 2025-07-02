@@ -4,7 +4,9 @@ import './App.css';
 
 function App() {
   // 👇 Change URL if backend host differs
-  const [url] = useState('http://192.168.0.23:3000/scan');
+ // client/src/App.jsx
+const apiHost = import.meta.env.VITE_API_BASE_URL;   // set in .env.production
+const [url] = useState(`${apiHost}/scan`);
 
   return (
     <main style={{display:'grid',placeItems:'center',minHeight:'100vh'}}>
