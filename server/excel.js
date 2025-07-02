@@ -45,8 +45,8 @@ const fs   = require('fs');
 const path = require('path');
 const XLSX = require('xlsx');
 
-// const FILE  = path.join(__dirname, 'scans.xlsx'); // change to '/var/data/…' on Render + disk
-const FILE  = path.join('/var/data',  'scans.xlsx');
+const FILE  = path.join(__dirname, 'scans.xlsx'); // change to '/var/data/…' on Render + disk
+// const FILE  = path.join('/var/data',  'scans.xlsx');
 const SHEET = 'scans';
 
 function ensureWorkbookExists() {
