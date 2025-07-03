@@ -266,6 +266,9 @@ console.log(ip,ua,"ipppppp")
     ">
      Hurry you got a ice gola🎉
     </h1>
+    <div>
+    <img src="./image/Kool-Aid Slushie Recipe.jpg" alt="kola" width="200" height="300"/>
+    </div>
   </div>  `
   );
 });
