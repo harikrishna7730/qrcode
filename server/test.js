@@ -95,6 +95,18 @@ app.get("/scan", (req, res) => {
 
 //  return res.send('✅ Thank you for scanning!');
 });
+
+
+app.get('/download-excel', (req, res) => {
+  const filePath = path.join(__dirname, 'output.xlsx');  // File in root
+  res.download(filePath, 'output.xlsx', (err) => {
+    if (err) {
+      console.error('Error downloading file:', err);
+      res.status(500).send('Failed to download the file.');
+    }
+  });
+})
+
  
 // Start server
 const PORT = 3000;
