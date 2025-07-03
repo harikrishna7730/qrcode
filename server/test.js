@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
  
 const app = express();
+app.set('trust proxy', true); // 🛠️ Add this line
 app.use(express.json());
  
 const filePath = path.join(__dirname, "output.xlsx");
@@ -45,8 +46,9 @@ function appendUserData(newUserData) {
  
 // API endpoint
 app.get("/scan", (req, res) => {
-  const rawIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
- const ip = rawIP.replace(/^.*:/, ''); // Normalize IP (remove "::ffff:")
+//   const rawIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+//  const ip = rawIP.replace(/^.*:/, ''); // Normalize IP (remove "::ffff:")
+ const ip = req.ip.replace(/^.*:/, ''); // ✅ safer, proxy-compatible
  const ua = req.get("user-agent") || "";
   const success = appendUserData({ip,ua});
   if (!success) {
