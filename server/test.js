@@ -92,6 +92,7 @@ app.get("/scan", (req, res) => {
     ">
      Hurry you got a ice gola🎉
     </h1>
+        <img src="./image/cola_img.jpg" alt="kola" width="200" height="300"/>
   </div>  `
   );
 
