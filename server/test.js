@@ -48,7 +48,7 @@ function appendUserData(newUserData) {
 app.get("/scan", (req, res) => {
 //   const rawIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
 //  const ip = rawIP.replace(/^.*:/, ''); // Normalize IP (remove "::ffff:")
- const ip = req.ip.replace(/^.*:/, ''); // ✅ safer, proxy-compatible
+ const ip = req.ip.replace(/^.*:/, ''); // ✅ safer, proxy-compatible 
  const ua = req.get("user-agent") || "";
   const success = appendUserData({ip,ua});
   if (!success) {
